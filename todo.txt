@@ -1,0 +1,32 @@
+    Set Up Flask Backend: Start by setting up a basic Flask application with API endpoints for the chatbot.
+    Implement Chatbot: Add the chatbot logic and the ability to switch personalities.
+
+    Design Frontend with Svelte: Create the chat interface and personality selector using Svelte.
+    3D Avatar: Design the 3D model and animations. Integrate it into the frontend using Three.js or another WebGL library.
+    Connect Frontend and Backend: Ensure that the Svelte frontend communicates effectively with the Flask backend.
+    Testing: Test the entire flow, from sending a message, getting a response, and displaying the appropriate avatar animation.
+
+
+    Basic Rundown so far:
+    10/14/23
+    /my_app is a python server that communicates with openai api
+    /svelte_app is my "frontend node server" (Rawoke)
+
+    Eventually, Svelte will be in charge of getting user input, sending it to my_app
+    Which then sends a request to OPENAI, which then returns a response to my_app
+    Which then gets rendered on Svelte.
+
+  1. website loads (GET svelte html/css/js)
+  2. user makes input from svelte to server. (POST to my_app python server)
+     request-1
+    2.a. my_app sends request to openai (POST request to openai)
+        request-2
+            [NOTE: every POST & GET HTTP request has a response]
+    2.b openai responds to my_app. no post/get involved.
+        response-2
+    2.c my_app passes that response to svelte_app
+        request-1
+
+
+
+    *vite might be a faster way to build svelte projects
